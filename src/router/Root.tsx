@@ -1,7 +1,6 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import layout from "../style/layout";
-import Button from "../components/Button";
 import Header from "../components/layout/Header";
 
 const Root = () => {
