@@ -2,23 +2,29 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import Dashboard from "./router/Dashboard.tsx";
-import HomePage from "./router/Home.tsx";
+import HomePage from "./router/HomePage.tsx";
 import SplashPage from "./router/SplashPage.tsx";
 import GlobalStyles from "./style/reset.ts";
+import Root from "./router/Root.tsx";
 
 const router = createHashRouter([
   {
-    path: "/",
+    path: "/splash",
     element: <SplashPage />,
-    children: [],
   },
   {
-    path: "/home",
-    element: <HomePage />,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "/home",
+        element: <HomePage />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+    ],
   },
 ]);
 
