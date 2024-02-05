@@ -1,10 +1,9 @@
-import { ReactEventHandler } from "react";
+import { PropsWithChildren, ReactEventHandler } from "react";
 import styled from "styled-components";
 
-interface Props {
+interface Props extends PropsWithChildren {
   id?: string;
   title?: string;
-  children: any;
   onClick?: ReactEventHandler;
 }
 

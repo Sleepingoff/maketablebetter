@@ -24,7 +24,7 @@ const SplashPage = () => {
   return (
     <>
       SplashPage
-      <Button onClick={handleClickTo}>준비 완료!</Button>
+      <Button.Default onClick={handleClickTo}>준비 완료!</Button.Default>
     </>
   );
 };

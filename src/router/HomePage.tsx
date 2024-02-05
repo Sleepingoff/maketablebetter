@@ -23,7 +23,7 @@ const HomePage = () => {
 
   return (
     <div>
-      this is home
+      only accept xlsx, xls files:
       <input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} />
       {excelData && (
         <div>
