@@ -13,6 +13,7 @@ const HomePage = () => {
     if (file) {
       await readExcelFile(file)
         .then((result) => {
+          console.log(result);
           setExcelData(result);
         })
         .catch((e) => {

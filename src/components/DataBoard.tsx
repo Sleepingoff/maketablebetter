@@ -8,18 +8,24 @@ const DataBoard = (props: Props) => {
   const data = props.data;
   const head = (
     <tr>
-      {Object.keys(data[0]).map((innerData, key) => (
-        <th key={key}>{innerData}</th>
-      ))}
+      {Object.keys(data[0]).map((innerData, key) => {
+        return <th key={key}>{innerData}</th>;
+      })}
     </tr>
   );
-  const itemList = data.map((item, keys) => (
-    <tr key={"tr" + keys}>
-      {Object.keys(item).map((innerItem, key) => (
-        <td key={"td" + key}>{innerItem}</td>
-      ))}
-    </tr>
-  ));
+  const itemList = data.map((item, keys) => {
+    const currentRow = item.__rowNum__;
+    //keys + 2 === currentRow
+    //TODO: 빈 셀을 알아야 한다!
+    return (
+      <tr key={"tr" + keys}>
+        {Object.values(item).map((innerItem: any, key) => {
+          if (innerItem) return <td key={"td" + key}>{innerItem}</td>;
+          else return <td key={"td" + key}> empty </td>;
+        })}
+      </tr>
+    );
+  });
 
   return (
     <table>
